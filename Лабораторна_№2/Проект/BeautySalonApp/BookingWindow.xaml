@@ -1,0 +1,32 @@
+﻿<Window x:Class="BeautySalonApp.BookingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Створення запису" Height="400" Width="350"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="#FFF5F5F5" Margin="20">
+        <StackPanel>
+            <TextBlock Text="Оформлення візиту" Style="{StaticResource HeaderStyle}" HorizontalAlignment="Center"/>
+
+            <TextBlock Text="Ім'я клієнта:" Margin="0,10,0,0"/>
+            <!-- Data Binding: прив'язуємо це поле до ClientName -->
+            <TextBox Text="{Binding ClientName, UpdateSourceTrigger=PropertyChanged}" Height="25"/>
+
+            <TextBlock Text="Послуга (наприклад, Манікюр):" Margin="0,10,0,0"/>
+            <!-- Data Binding: прив'язуємо це поле до ServiceType -->
+            <TextBox Text="{Binding ServiceType, UpdateSourceTrigger=PropertyChanged}" Height="25"/>
+
+            <TextBlock Text="Майстер:" Margin="0,10,0,0"/>
+            <!-- Data Binding: прив'язуємо це поле до MasterName -->
+            <TextBox Text="{Binding MasterName, UpdateSourceTrigger=PropertyChanged}" Height="25"/>
+
+            <TextBlock Text="Телефон:" Margin="0,10,0,0"/>
+            <!-- Data Binding: прив'язуємо це поле до PhoneNumber -->
+            <TextBox Text="{Binding PhoneNumber, UpdateSourceTrigger=PropertyChanged}" Height="25"/>
+
+            <Button Content="Підтвердити запис" Style="{StaticResource SalonButtonStyle}" 
+                    Margin="0,20,0,0" Click="BtnSave_Click"/>
+            <Button Content="Скасувати" Style="{StaticResource SalonButtonStyle}" 
+                    Click="BtnCancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
